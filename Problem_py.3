@@ -1,0 +1,42 @@
+def display_right_angled_triangle(height):
+    for i in range(1, height + 1):
+        print('1' * i)
+
+def display_palindromic_triangle(height):
+    for i in range(1, height + 1):
+        row = ''.join(str(j) for j in range(1, i + 1)) + ''.join(str(j) for j in range(i - 1, 0, -1))
+        print(row)
+
+def show_help():
+    print("Menu options:")
+    print("1. Display a right-angled triangle of ones")
+    print("2. Display a Palindromic Triangle")
+    print("3. Help")
+    print("4. Exit")
+    print("Enter your choice from 1 to 4.")
+
+def main():
+    while True:
+        print("\nMenu:")
+        print("1. Display a right-angled triangle of ones")
+        print("2. Display a Palindromic Triangle")
+        print("3. Help")
+        print("4. Exit")
+        choice = input("Enter your choice (1-4): ")
+
+        if choice == '1':
+            height = int(input("Enter the height of the triangle: "))
+            display_right_angled_triangle(height)
+        elif choice == '2':
+            height = int(input("Enter the height of the triangle: "))
+            display_palindromic_triangle(height)
+        elif choice == '3':
+            show_help()
+        elif choice == '4':
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please enter a number from 1 to 4.")
+
+if __name__ == "__main__":
+    main()
