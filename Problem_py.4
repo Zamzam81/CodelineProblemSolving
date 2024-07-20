@@ -1,0 +1,20 @@
+def get_even_squares(input_list):
+    even_squares = [x**2 for x in input_list if x % 2 == 0]
+    return even_squares
+
+def get_sublist(input_list, start_index, end_index):
+    return input_list[start_index:end_index]
+
+def main():
+    input_list = list(map(int, input("Enter a list of integers separated by spaces: ").split()))
+    
+    even_squares = get_even_squares(input_list)
+    print(f"List of squares of even numbers: {even_squares}")
+    
+    start_index = int(input("Enter the start index for sublist: "))
+    end_index = int(input("Enter the end index for sublist: "))
+    sublist = get_sublist(input_list, start_index, end_index)
+    print(f"Sublist from index {start_index} to {end_index}: {sublist}")
+
+if __name__ == "__main__":
+    main()
